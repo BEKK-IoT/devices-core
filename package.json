@@ -4,6 +4,7 @@
   "description": "Core library for IoT devices",
   "main": "index.js",
   "scripts": {
+    "test" : "babel index.js && babel ./lib"
   },
   "repository": {
     "type": "git",
