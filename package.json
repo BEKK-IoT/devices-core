@@ -9,6 +9,12 @@
     "type": "git",
     "url": "git+https://github.com/BEKK-IoT/devices-core.git"
   },
+  "devDependencies": {
+    "babel": "^5.8.21"
+  },
+  "dependencies": {
+    "firebase": "^2.2.9"
+  },
   "author": "Vegard Veiset",
   "license": "MIT",
   "bugs": {
