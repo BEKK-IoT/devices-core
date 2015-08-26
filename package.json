@@ -2,9 +2,10 @@
   "name": "devices-core",
   "version": "0.0.1",
   "description": "Core library for IoT devices",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test" : "babel index.js && babel ./lib"
+    "test": "babel index.js && babel ./lib",
+    "build": "babel index.js -o ./dist/index.js && babel lib/ -d dist/lib/"
   },
   "repository": {
     "type": "git",
