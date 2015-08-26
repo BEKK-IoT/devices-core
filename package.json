@@ -1,0 +1,18 @@
+{
+  "name": "devices-core",
+  "version": "0.0.1",
+  "description": "Core library for IoT devices",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BEKK-IoT/devices-core.git"
+  },
+  "author": "Vegard Veiset",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BEKK-IoT/devices-core/issues"
+  },
+  "homepage": "https://github.com/BEKK-IoT/devices-core#readme"
+}
