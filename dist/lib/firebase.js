@@ -12,8 +12,9 @@ var Firebase = (function () {
         _classCallCheck(this, Firebase);
 
         this.id = id;
-        this.userEvents = new firebase(rootUrl + 'users/' + id + '/');
-        this.rootEvents = new firebase(rootUrl + 'events/');
+        this.userFirebase = new firebase(rootUrl + 'users/' + id + '/');
+        registerUser(this.userFirebase);
+        this.rootEventsFirebase = new firebase(rootUrl + 'events/');
     }
 
     _createClass(Firebase, [{
@@ -21,8 +22,8 @@ var Firebase = (function () {
         value: function send(e, data) {
             var dataToSend = {};
             dataToSend[e] = data;
-            this.userEvents.set(dataToSend);
-            this.rootEvents.set(dataToSend);
+            this.userFirebase.update(dataToSend);
+            this.rootEventsFirebase.update(dataToSend);
         }
     }, {
         key: 'onEvent',
@@ -40,6 +41,11 @@ var Firebase = (function () {
                 triggerCallback(callback, snapshot);
             });
         }
+    }, {
+        key: 'unregister',
+        value: function unregister() {
+            this.userFirebase.update({ 'registered': false });
+        }
     }]);
 
     return Firebase;
@@ -50,6 +56,11 @@ function triggerCallback(callback, snapshot) {
     if (val !== null && val !== undefined) {
         callback(snapshot.val());
     }
+}
+
+function registerUser(userFirebase) {
+    console.log('Registering user');
+    userFirebase.update({ 'registered': true });
 }
 
 module.exports = Firebase;
