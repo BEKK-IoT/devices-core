@@ -15,7 +15,8 @@
     "babel": "^5.8.21"
   },
   "dependencies": {
-    "firebase": "^2.2.9"
+    "firebase": "^2.2.9",
+    "johnny-five": "^0.8.89"
   },
   "author": "Vegard Veiset",
   "license": "MIT",
