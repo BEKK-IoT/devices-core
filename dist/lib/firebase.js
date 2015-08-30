@@ -45,11 +45,11 @@ var Firebase = (function () {
     return Firebase;
 })();
 
-var triggerCallback = function triggerCallback(callback, snapshot) {
+function triggerCallback(callback, snapshot) {
     var val = snapshot.val();
     if (val !== null && val !== undefined) {
         callback(snapshot.val());
     }
-};
+}
 
 module.exports = Firebase;
