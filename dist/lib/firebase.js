@@ -29,10 +29,7 @@ var Firebase = (function () {
         value: function onEvent(e, callback) {
             var userEvent = new firebase(rootUrl + 'events/');
             userEvent.child(e).on('value', function (snapshot) {
-                var val = snapshot.val();
-                if (val !== null && val !== undefined) {
-                    callback(snapshot.val());
-                }
+                triggerCallback(callback, snapshot);
             });
         }
     }, {
@@ -40,15 +37,19 @@ var Firebase = (function () {
         value: function onUserEvent(id, e, callback) {
             var userEvent = new firebase(rootUrl + 'users/' + id + '/');
             userEvent.child(e).on('value', function (snapshot) {
-                var val = snapshot.val();
-                if (val !== null && val !== undefined) {
-                    callback(snapshot.val());
-                }
+                triggerCallback(callback, snapshot);
             });
         }
     }]);
 
     return Firebase;
 })();
+
+var triggerCallback = function triggerCallback(callback, snapshot) {
+    var val = snapshot.val();
+    if (val !== null && val !== undefined) {
+        callback(snapshot.val());
+    }
+};
 
 module.exports = Firebase;
