@@ -9,12 +9,14 @@ var rootUrl = 'https://fiery-inferno-7517.firebaseio.com/';
 
 var Firebase = (function () {
     function Firebase(id) {
+        var path = arguments[1] === undefined ? 'events/' : arguments[1];
+
         _classCallCheck(this, Firebase);
 
         this.id = id;
         this.userFirebase = new firebase(rootUrl + 'users/' + id + '/');
         registerUser(this.userFirebase);
-        this.rootEventsFirebase = new firebase(rootUrl + 'events/');
+        this.rootEventsFirebase = new firebase(rootUrl + path);
     }
 
     _createClass(Firebase, [{
