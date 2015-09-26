@@ -8,7 +8,7 @@ johnnyFive.Board = function (firebase, boardVars) {
     var b = new tmp(boardVars);
     b.on('message', function (event) {
         if (event.message == 'Closing.') {
-            console.log('Unregistering');
+            console.log("Unregistering");
             firebase.unregister();
         }
     });
