@@ -4,7 +4,7 @@
   "description": "Core library for IoT devices",
   "main": "dist/index.js",
   "scripts": {
-    "test": "babel-node test/test_default_send.js && babel-node test/test_custom_path.js",
+    "test": "babel-node test/test_default_send.js && babel-node test/test_custom_path.js && babel-node test/test_unregister.js",
     "build": "babel index.js -o ./dist/index.js && babel lib/ -d dist/lib/"
   },
   "repository": {
