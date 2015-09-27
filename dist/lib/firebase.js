@@ -56,8 +56,10 @@ var Firebase = (function () {
     }, {
         key: 'unregister',
         value: function unregister(connection) {
+            var callback = arguments.length <= 1 || arguments[1] === undefined ? function () {} : arguments[1];
+
             console.log('Unregistering user ' + this.id);
-            connection.update({ 'registered': false });
+            connection.update({ 'registered': false }, callback);
         }
     }, {
         key: 'register',
