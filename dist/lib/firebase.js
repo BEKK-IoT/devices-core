@@ -73,7 +73,7 @@ var Firebase = (function () {
     }, {
         key: 'disconnect',
         value: function disconnect(connections) {
-            for (key in connetions) {
+            for (key in connections) {
                 connections[key].goOffline();
             }
         }
