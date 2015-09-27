@@ -30,7 +30,7 @@ var Firebase = (function () {
             return _this.unregister(_this.defaultConnection);
         });
         process.on('SIGINT', function () {
-            return _this.disconnect(_this.connections);
+            return _this.disconnect();
         });
     }
 
@@ -72,12 +72,8 @@ var Firebase = (function () {
         }
     }, {
         key: 'disconnect',
-        value: function disconnect(connections) {
-            for (var key in connections) {
-                if (connections.hasOwnProperty(key)) {
-                    connections[key].goOffline();
-                }
-            }
+        value: function disconnect() {
+            _firebase2['default'].goOffline();
         }
     }]);
 
