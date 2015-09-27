@@ -29,6 +29,9 @@ var Firebase = (function () {
         process.on('SIGINT', function () {
             return _this.unregister(_this.defaultConnection);
         });
+        process.on('SIGINT', function () {
+            return _this.disconnect(_this.connections);
+        });
     }
 
     _createClass(Firebase, [{
@@ -66,6 +69,13 @@ var Firebase = (function () {
         value: function register() {
             console.log('Registering user ' + this.id);
             this.defaultConnection.update({ 'registered': true });
+        }
+    }, {
+        key: 'disconnect',
+        value: function disconnect(connections) {
+            for (key in connetions) {
+                connections[key].goOffline();
+            }
         }
     }]);
 
