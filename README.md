@@ -9,3 +9,7 @@ Library for the shared functionality between the devices.
 ## Building new version
 
 `npm run build`
+
+
+
+If you are using a Photon DO NOT USE PIN 'A5' 
